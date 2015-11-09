@@ -1,5 +1,6 @@
 package fr.esigelec.garage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import fr.esigelec.garage.Voiture;
@@ -21,8 +22,13 @@ public class VoitureDAO {
 	}
 	public Voiture get(int id){
 		
+		// TODO remove
+		return new Voiture();
 	}
 	public List<Voiture> getVoitures(){
 		
+		
+		// TODO remove 
+		return new ArrayList<Voiture>();
 	}
 }
