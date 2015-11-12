@@ -8,7 +8,10 @@ public class VoitureDAOTest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		VoitureDAO dao = new VoitureDAO();
+		Voiture v = null;
+		dao.ajouter(v);
+		
 	}
 
 }

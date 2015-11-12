@@ -5,7 +5,7 @@ public class Voiture {
 	private int km;
 	private String immatriculation;
 	private String modele;
-	
+	private int anneeConstruction;
 	public Voiture() {
 		
 	}
@@ -52,6 +52,6 @@ public class Voiture {
 	public void setAnneeConstruction(int anneeConstruction) {
 		this.anneeConstruction = anneeConstruction;
 	}
-	private int anneeConstruction;
+	
 	
 }
