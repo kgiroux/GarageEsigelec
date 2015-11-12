@@ -13,12 +13,14 @@ public class VoitureDAO {
 
 	VoitureDAO(){};
 	public void ajouter(Voiture v){
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		session.beginTransaction();
-		// Seul ligne qui peut changer
-		session.save(v);
-		session.getTransaction().commit();
-		session.close();
+		if(v != null){
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			session.beginTransaction();
+			// Seul ligne qui peut changer
+			session.save(v);
+			session.getTransaction().commit();
+			session.close();
+		}
 	}
 	public void supprimer(Voiture v){
 		Session session = HibernateUtil.getSessionFactory().openSession();
