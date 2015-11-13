@@ -2,6 +2,8 @@ package fr.esigelec.garage;
 
 import static org.junit.Assert.*;
 
+import java.security.InvalidParameterException;
+
 import org.junit.Test;
 
 public class VoitureDAOTest {
@@ -9,6 +11,7 @@ public class VoitureDAOTest {
 	@Test
 	public void ajouterNull() {
 		VoitureDAO dao = new VoitureDAO();
+		//dao.deleteVoitures();
 		Voiture v = null;
 		dao.ajouter(v);
 		System.out.println(dao.getVoitures());
@@ -35,12 +38,19 @@ public class VoitureDAOTest {
 	}
 	
 	@Test
-	public void getVoitureListVideTest(){
-		VoitureDAO dao = new VoitureDAO();
-		assertNull(dao.getVoitures());
-	}
+ 	public void getVoitureListAfterAddTest(){
+ 		VoitureDAO dao = new VoitureDAO();
+ 		//dao.deleteVoitures();
+ 		Voiture v = new Voiture(0,5000,"ABC-DEF-GHI","CITROEN",2009);
+ 		Voiture w = new Voiture(1,1,"JKL-MNO-PQR","PEUGEOT",-500);
+ 		dao.ajouter(v);
+ 		dao.ajouter(w);
+ 		assertEquals(dao.getVoitures().size(), 2);
+ 		dao.supprimer(v);
+ 		dao.supprimer(w);
+ 	}
 	
-	@Test
+	@Test(expected = AssertionError.class)  
 	public void supprimerNullTest(){
 		VoitureDAO dao = new VoitureDAO();
 		Voiture v = null;
@@ -48,13 +58,46 @@ public class VoitureDAOTest {
 	}
 	
 	@Test
-	public void supprimerVoiture(){
+	public void supprimerVoitureTest(){
 		Voiture v = new Voiture(1009,5000,"ABC-DEF-GHI","CITROEN",2009);
 		VoitureDAO dao = new VoitureDAO();
 		dao.ajouter(v);
-		//dao.supprimer(v);
-		assertNull(v);
+		System.out.println("TEST : " + v);
+		dao.supprimer(v);
+		System.out.println("TEST : " + v);
+		assertNull(dao.get(v.getId()));
+	}
+	
+	@Test (expected = InvalidParameterException.class)
+	public void roulerNegatifValue(){
+		Voiture v = new Voiture(1009,5000,"ABC-DEF-GHI","CITROEN",2009);
+		VoitureDAO dao = new VoitureDAO();
+		dao.rouler(v, -1);
 		
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void roulerNullVoitureTest(){
+		Voiture v = null;
+		VoitureDAO dao = new VoitureDAO();
+		dao.rouler(v, -1);
+		
+	}
+	
+	@Test
+	public void roulerZeroValue(){
+		Voiture v =  new Voiture(0,5000,"ABC-DEF-GHI","CITROEN",2009);
+		VoitureDAO dao = new VoitureDAO();
+		dao.rouler(v, 0);
+		assertEquals(5000, v.getKm());
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void roulerMaxValue(){
+		Voiture v =  new Voiture(0,5000,"ABC-DEF-GHI","CITROEN",2009);
+		VoitureDAO dao = new VoitureDAO();
+		dao.rouler(v,  2147483647);
+		//assertEquals(5000, v.getKm());
 	}
 	
 	

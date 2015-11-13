@@ -17,6 +17,7 @@ public class HibernateUtil {
 		}
 		catch (Exception e) {
 			StandardServiceRegistryBuilder.destroy( registry );
+			e.printStackTrace();
 		}
 		return sessionFactory;
 	}
