@@ -68,6 +68,28 @@ public class VoitureDAOTest {
 		assertNull(dao.get(v.getId()));
 	}
 	
+	@Test(expected = IllegalArgumentException.class)
+	public void supprimerByIDNegatifValueTest(){
+		VoitureDAO dao = new VoitureDAO();
+		dao.supprimer(-1);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void supprimerByIDZeroValueTest(){
+		VoitureDAO dao = new VoitureDAO();
+		dao.supprimer(0);
+	}
+	
+	@Test
+	public void supprimerByIDValueTest(){
+		VoitureDAO dao = new VoitureDAO();
+		Voiture v = new Voiture(15,5000,"ABC-DEF-GHI","CITROEN",2009);
+		dao.ajouter(v);
+		dao.supprimer(v.getId());
+		assertNull(dao.get(v.getId()));
+	}
+	
+	
 	@Test (expected = InvalidParameterException.class)
 	public void roulerNegatifValue(){
 		Voiture v = new Voiture(1009,5000,"ABC-DEF-GHI","CITROEN",2009);
