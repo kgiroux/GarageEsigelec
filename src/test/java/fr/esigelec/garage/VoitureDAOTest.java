@@ -7,11 +7,12 @@ import org.junit.Test;
 public class VoitureDAOTest {
 
 	@Test
-	public void test() {
+	public void ajouterTest() {
 		VoitureDAO dao = new VoitureDAO();
 		Voiture v = null;
 		dao.ajouter(v);
-		
+		System.out.println(dao.getVoitures());
+		assertEquals(dao.getVoitures(),null);
 	}
 
 }
