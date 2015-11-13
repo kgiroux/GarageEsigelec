@@ -14,5 +14,10 @@ public class VoitureDAOTest {
 		System.out.println(dao.getVoitures());
 		assertEquals(dao.getVoitures(),null);
 	}
+	
+	@Test
+	public void getVoitureTest(){
+		VoitureDAO dao = new VoitureDAO();
+	}
 
 }
