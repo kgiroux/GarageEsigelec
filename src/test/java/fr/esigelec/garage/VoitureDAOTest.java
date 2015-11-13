@@ -7,12 +7,12 @@ import org.junit.Test;
 public class VoitureDAOTest {
 
 	@Test
-	public void ajouterTest() {
+	public void ajouterNull() {
 		VoitureDAO dao = new VoitureDAO();
 		Voiture v = null;
 		dao.ajouter(v);
 		System.out.println(dao.getVoitures());
-		assertEquals(dao.getVoitures(),null);
+		assertEquals(dao.getVoitures().size(),0);
 	}
 	
 	@Test
@@ -48,7 +48,6 @@ public class VoitureDAOTest {
 		assertEquals(dao.getVoitures().size(), 2);
 		dao.supprimer(v);
 		dao.supprimer(w);
-		dao.supprimer(v);
 	}
 	
 	
