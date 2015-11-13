@@ -10,3 +10,7 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+src/main/java/fr/esigelec/garage/VoitureDAO.java.rej
+target/classes/META-INF/MANIFEST.MF
+target/classes/META-INF/maven/GarageEsigelec/GarageEsigelec/pom.properties
+target/classes/META-INF/maven/GarageEsigelec/GarageEsigelec/pom.xml

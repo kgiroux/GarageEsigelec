@@ -1,14 +1,12 @@
 package fr.esigelec.garage;
 
 import java.security.InvalidParameterException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
-import fr.esigelec.garage.Voiture;
 import utils.HibernateUtil;
 
 
@@ -29,7 +27,6 @@ public class VoitureDAO {
 			LOGGER1.trace("Voiture ajoutée !");
 		}
 	}
-<<<<<<< HEAD
 	public void supprimer(Voiture v) throws AssertionError{
 		if(v != null){
 			Session session = HibernateUtil.getSessionFactory().openSession();
@@ -38,20 +35,10 @@ public class VoitureDAO {
 			session.delete(v);
 			session.getTransaction().commit();
 			session.close();
+			LOGGER1.trace("Voiture supprimée !");
 		}else{
 			throw new AssertionError();
 		}
-		
-	public void supprimer(Voiture v){
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		session.beginTransaction();
-		// Seul ligne qui peut changer
-		session.delete(v);
-		session.getTransaction().commit();
-		session.close();
-		
-		LOGGER1.trace("Voiture supprimée !");
->>>>>>> 483eefaafed7a00a6827a7168571737530ae3f91
 	}
 	public void supprimer(int id){
 		
@@ -63,7 +50,6 @@ public class VoitureDAO {
 		
 		LOGGER1.trace("Voiture supprimée !");
 	}
-<<<<<<< HEAD
 	public void rouler(Voiture v , int distance) throws AssertionError, InvalidParameterException, IllegalArgumentException{
 		if(v != null){
 			if(distance >= 0){
@@ -76,12 +62,12 @@ public class VoitureDAO {
 					try{
 						session.saveOrUpdate(v);
 						session.getTransaction().commit();
+						LOGGER1.trace("Voiture a roulé !");
 					}catch(Exception e){
 						e.printStackTrace();
 						session.getTransaction().rollback();
 					}
 					finally{
-						
 						session.close();
 					}
 					
@@ -96,20 +82,6 @@ public class VoitureDAO {
 		}else{
 			throw new AssertionError();
 		}
-		
-		
-=======
-	public void rouler(Voiture v, int distance){
-	
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		session.beginTransaction();
-		// Seul ligne qui peut changer
-		session.update(v);
-		session.getTransaction().commit();
-		session.close();
-		
-		LOGGER1.trace("Voiture a roulé !");
->>>>>>> 483eefaafed7a00a6827a7168571737530ae3f91
 	}
 	public Voiture get(int id){
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -128,14 +100,9 @@ public class VoitureDAO {
 		Query query = session.createQuery(hql);
 		List<Voiture> vehicules=query.list();
 		session.getTransaction().commit();
-		session.close();LOGGER1.trace("Voitures retournées !");
+		session.close();
+		LOGGER1.trace("Voitures retournées !");
 		
 		return vehicules;
-	}
-	
-	public void deleteVoitures(){
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		session.beginTransaction();
-		session.createQuery("delete from Voiture").executeUpdate();
 	}
 }
