@@ -34,11 +34,13 @@ public class VoitureDAOTest {
 		dao.supprimer(v);
 	}
 	
+	@Test
 	public void getVoitureListVideTest(){
 		VoitureDAO dao = new VoitureDAO();
 		assertNull(dao.getVoitures());
 	}
 	
+	@Test
 	public void getVoitureListAfterAddTest(){
 		VoitureDAO dao = new VoitureDAO();
 		Voiture v = new Voiture(0,5000,"ABC-DEF-GHI","CITROEN",2009);
@@ -49,8 +51,5 @@ public class VoitureDAOTest {
 		dao.supprimer(v);
 		dao.supprimer(w);
 	}
-	
-	
-	
 	
 }
