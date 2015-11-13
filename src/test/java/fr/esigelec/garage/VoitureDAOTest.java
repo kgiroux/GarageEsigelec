@@ -35,8 +35,22 @@ public class VoitureDAOTest {
 	}
 	
 	
+	@Test
+	public void supprimerNullTest(){
+		VoitureDAO dao = new VoitureDAO();
+		Voiture v = null;
+		dao.supprimer(v);
+	}
 	
-	
+	@Test
+	public void supprimerVoiture(){
+		Voiture v = new Voiture(1009,5000,"ABC-DEF-GHI","CITROEN",2009);
+		VoitureDAO dao = new VoitureDAO();
+		dao.ajouter(v);
+		//dao.supprimer(v);
+		assertNull(v);
+		
+	}
 	
 	
 }
