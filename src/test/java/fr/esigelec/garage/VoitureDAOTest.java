@@ -16,25 +16,27 @@ public class VoitureDAOTest {
 	}
 	
 	@Test
-	public void getVoitureTestIndexZero(){
+	public void getVoitureIndexZeroTest(){
 		VoitureDAO dao = new VoitureDAO();
-		System.out.println(dao.get(0));
 		assertNull(dao.get(0));
 	}
-	
-	
 	@Test
-	public void getVoitureTestIndexNegatif(){
+	public void getVoitureIndexNegatifTest(){
 		VoitureDAO dao = new VoitureDAO();
 		assertNull(dao.get(-1));
 	}
-	
 	@Test
-	public void getVoitureTestAfterAdd(){
+	public void getVoitureAfterAddTest(){
 		VoitureDAO dao = new VoitureDAO();
 		Voiture v = new Voiture(0,5000,"ABC-DEF-GHI","CITROEN",2009);
 		dao.ajouter(v);
 		assertEquals(v, dao.get(v.getId()));
+		dao.supprimer(v);
 	}
+	
+	
+	
+	
+	
 	
 }

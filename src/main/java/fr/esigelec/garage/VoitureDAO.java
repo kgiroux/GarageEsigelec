@@ -35,10 +35,7 @@ public class VoitureDAO {
 		session.beginTransaction();
 		Voiture voiture = new Voiture();
 		voiture.setId(id);
-		// Seul ligne qui peut changer
-		session.delete(voiture);
-		session.getTransaction().commit();
-		session.close();
+		supprimer(voiture);
 	}
 	public void rouler(Voiture v, int distance){
 	
