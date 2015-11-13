@@ -41,15 +41,21 @@ public class VoitureDAOTest {
 	}
 	
 	@Test
-	public void getVoitureListAfterAddTest(){
+	public void supprimerNullTest(){
 		VoitureDAO dao = new VoitureDAO();
-		Voiture v = new Voiture(0,5000,"ABC-DEF-GHI","CITROEN",2009);
-		Voiture w = new Voiture(1,1,"JKL-MNO-PQR","PEUGEOT",-500);
-		dao.ajouter(v);
-		dao.ajouter(w);
-		assertEquals(dao.getVoitures().size(), 2);
+		Voiture v = null;
 		dao.supprimer(v);
-		dao.supprimer(w);
 	}
+	
+	@Test
+	public void supprimerVoiture(){
+		Voiture v = new Voiture(1009,5000,"ABC-DEF-GHI","CITROEN",2009);
+		VoitureDAO dao = new VoitureDAO();
+		dao.ajouter(v);
+		//dao.supprimer(v);
+		assertNull(v);
+		
+	}
+	
 	
 }
