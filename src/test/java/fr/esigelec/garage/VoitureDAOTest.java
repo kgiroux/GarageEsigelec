@@ -18,6 +18,7 @@ public class VoitureDAOTest {
 	@Test
 	public void getVoitureTest(){
 		VoitureDAO dao = new VoitureDAO();
+		dao.get(0);
 	}
 
 }
