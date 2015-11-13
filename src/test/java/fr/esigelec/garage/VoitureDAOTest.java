@@ -37,7 +37,7 @@ public class VoitureDAOTest {
 	@Test
 	public void getVoitureListVideTest(){
 		VoitureDAO dao = new VoitureDAO();
-		assertNull(dao.getVoitures());
+		assertEquals(dao.getVoitures().size(),0);
 	}
 	
 	@Test
