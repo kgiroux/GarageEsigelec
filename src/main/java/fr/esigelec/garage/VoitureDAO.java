@@ -40,15 +40,17 @@ public class VoitureDAO {
 			throw new AssertionError();
 		}
 	}
-	public void supprimer(int id){
-		
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		session.beginTransaction();
-		Voiture voiture = new Voiture();
-		voiture.setId(id);
-		supprimer(voiture);
-		
-		LOGGER1.trace("Voiture supprimée !");
+	public void supprimer(int id) throws IllegalArgumentException{
+		if(id > 0){
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			session.beginTransaction();
+			Voiture voiture = new Voiture();
+			voiture.setId(id);
+			supprimer(voiture);
+			LOGGER1.trace("Voiture supprimée !");
+		}else{
+			throw new IllegalArgumentException();
+		}
 	}
 	public void rouler(Voiture v , int distance) throws AssertionError, InvalidParameterException, IllegalArgumentException{
 		if(v != null){
