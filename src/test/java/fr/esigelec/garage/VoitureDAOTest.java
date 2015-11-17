@@ -112,6 +112,7 @@ public class VoitureDAOTest {
 		VoitureDAO dao = new VoitureDAO();
 		dao.rouler(v, 0);
 		assertEquals(5000, v.getKm());
+		dao.supprimer(v);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
@@ -119,7 +120,6 @@ public class VoitureDAOTest {
 		Voiture v =  new Voiture(0,5000,"ABC-DEF-GHI","CITROEN",2009);
 		VoitureDAO dao = new VoitureDAO();
 		dao.rouler(v,  2147483647);
-		//assertEquals(5000, v.getKm());
 	}
 	
 	
