@@ -1,0 +1,4 @@
+On retrouve, dans le .zip, les classes de production, les fichiers xml,sql et properties ainsi que tous les fichiers permettant
+l'exécution du programme.
+
+Nous n'y retrouvons plus les classes de tests.

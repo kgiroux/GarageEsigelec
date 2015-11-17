@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="fr.esigelec.garage.VoitureDAOTest" time="1.868" errors="0" skipped="0">
+<testsuite tests="11" failures="0" name="fr.esigelec.garage.VoitureDAOTest" time="1.899" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_65\jre\bin"/>
@@ -26,7 +26,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="D:\Mes programmes\workspace Java JEE\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf8908636097891902365.tmp"/>
+    <property name="classworlds.conf" value="D:\Mes programmes\workspace Java JEE\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf2226608347107418593.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_65\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_65/bin/server;C:/Program Files/Java/jre1.8.0_65/bin;C:/Program Files/Java/jre1.8.0_65/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Condusiv Technologies\ExpressCache\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5.4 &amp; MySQL Utilities 1.5.4 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5.4 &amp; MySQL Utilities 1.5.4 1.5\Doctrine extensions for PHP\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files (x86)\Brackets\command;C:\Program Files\Java\jdk1.8.0_40;C:\Program Files (x86)\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -61,10 +61,15 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="fr.esigelec.garage.VoitureDAOTest" name="getVoitureIndexZeroTest" time="1.743"/>
-  <testcase classname="fr.esigelec.garage.VoitureDAOTest" name="getVoitureListVideTest" time="0.069"/>
-  <testcase classname="fr.esigelec.garage.VoitureDAOTest" name="ajouterNull" time="0.002"/>
-  <testcase classname="fr.esigelec.garage.VoitureDAOTest" name="getVoitureListAfterAddTest" time="0.043"/>
-  <testcase classname="fr.esigelec.garage.VoitureDAOTest" name="getVoitureIndexNegatifTest" time="0.002"/>
-  <testcase classname="fr.esigelec.garage.VoitureDAOTest" name="getVoitureAfterAddTest" time="0.009"/>
+  <testcase classname="fr.esigelec.garage.VoitureDAOTest" name="getVoitureIndexZeroTest" time="1.761"/>
+  <testcase classname="fr.esigelec.garage.VoitureDAOTest" name="roulerMaxValue" time="0"/>
+  <testcase classname="fr.esigelec.garage.VoitureDAOTest" name="roulerNegatifValue" time="0"/>
+  <testcase classname="fr.esigelec.garage.VoitureDAOTest" name="ajouterNull" time="0.072"/>
+  <testcase classname="fr.esigelec.garage.VoitureDAOTest" name="getVoitureListAfterAddTest" time="0.048"/>
+  <testcase classname="fr.esigelec.garage.VoitureDAOTest" name="supprimerVoitureTest" time="0.006"/>
+  <testcase classname="fr.esigelec.garage.VoitureDAOTest" name="getVoitureIndexNegatifTest" time="0.001"/>
+  <testcase classname="fr.esigelec.garage.VoitureDAOTest" name="roulerZeroValue" time="0.003"/>
+  <testcase classname="fr.esigelec.garage.VoitureDAOTest" name="supprimerNullTest" time="0"/>
+  <testcase classname="fr.esigelec.garage.VoitureDAOTest" name="getVoitureAfterAddTest" time="0.008"/>
+  <testcase classname="fr.esigelec.garage.VoitureDAOTest" name="roulerNullVoitureTest" time="0"/>
 </testsuite>
